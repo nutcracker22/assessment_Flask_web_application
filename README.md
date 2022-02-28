@@ -16,4 +16,6 @@ First steps:
 - implemented work-arounds for this and similar errors
 - ran again to create the first version of the database
 - inspected database to look for semantic errors, which might be caused by mistakes in the original dataset
-- wrote workarounds for those 
+- wrote workarounds for those
+- another commit to GitHub and did a pull request without deleting the development branch
+- 

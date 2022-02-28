@@ -33,7 +33,10 @@ def assign_values(r, i):
         except ValueError:
             adult = "not known"
 
-        #            cur.execute('INSERT INTO movies VALUES(NULL,?,?)', (movie_name, movie_overview))
+        try:
+            cur.execute('INSERT INTO movies VALUES(NULL,?,?)', (movie_name, movie_overview))
+        except:
+            pass
         try:
             cur.execute('INSERT INTO release_dates VALUES(NULL,?)', (release_date,))
         except sqlite3.IntegrityError:
@@ -55,6 +58,8 @@ def assign_values(r, i):
         except sqlite3.IntegrityError:
             pass
         conn.commit()
+
+#def create_final_database():
 
 
 conn = sqlite3.connect('movies-data.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
@@ -90,7 +95,104 @@ with open('latest_popular_movies_dataset.csv', newline='') as file:
         year = row[2].split("-", 1)[0]
         try:
             year = int(year)
-            assign_values(row, i)
-            i += 1
+            if isinstance(year, int) and int(year) >= 2007:
+#                print(str(i + 2), row)
+                movie_name = row[1]
+#                print(movie_name)
+                movie_overview = row[3]
+                try:
+                    release_date = row[2]
+                except ValueError:
+                    release_date = "not known"
+                try:
+                    if len(row[4]) <= 3 and row[4] != "":
+                        original_language = row[4]
+                    else:
+                        original_language = "not known"
+                except ValueError:
+                    original_language = "not known"
+                try:
+                    vote_count = int(row[5])
+                except ValueError:
+                    vote_count = "not known"
+                try:
+                    if float(row[6]) <= 10:
+                        vote_average = float(row[6])
+                    else:
+                        vote_average = "not known"
+                except ValueError:
+                    vote_average = "not known"
+                try:
+                    adult = bool(row[7])
+                except ValueError:
+                    adult = "not known"
+
+                try:
+                    cur.execute('INSERT INTO release_dates VALUES(NULL,?)', (release_date,))
+                    conn.commit()
+                except sqlite3.IntegrityError:
+                    pass
+                try:
+                    cur.execute('INSERT INTO languages VALUES(NULL,?)', (original_language,))
+                    conn.commit()
+                except sqlite3.IntegrityError:
+                    pass
+                try:
+                    cur.execute('INSERT INTO age_ratings VALUES(NULL,?)', (adult,))
+                    conn.commit()
+                except sqlite3.IntegrityError:
+                    pass
+                try:
+                    cur.execute('INSERT INTO vote_counts VALUES(NULL,?)', (vote_count,))
+                    conn.commit()
+                except sqlite3.IntegrityError:
+                    pass
+                try:
+                    cur.execute('INSERT INTO vote_averages VALUES(NULL,?)', (vote_average,))
+                    conn.commit()
+                except sqlite3.IntegrityError:
+                    pass
+
+                cur.execute('SELECT * FROM release_dates WHERE release_date=?', (release_date, ))
+                release_ids = cur.fetchall()
+#                print(release_ids)
+                release_id = release_ids[0][0]
+
+                cur.execute('SELECT * FROM languages WHERE language=?', (original_language, ))
+                language_ids = cur.fetchall()
+#                print(release_ids)
+                language_id = language_ids[0][0]
+
+                cur.execute('SELECT * FROM age_ratings WHERE age_rating=?', (adult, ))
+                age_ratings = cur.fetchall()
+                # print(release_ids)
+                age_rating_id = age_ratings[0][0]
+
+                cur.execute('SELECT * FROM vote_counts WHERE vote_count=?', (vote_count, ))
+                vote_count_ids = cur.fetchall()
+                # print(release_ids)
+                vote_count_id = vote_count_ids[0][0]
+
+                cur.execute('SELECT * FROM vote_averages WHERE vote_average=?', (vote_average, ))
+                vote_averages = cur.fetchall()
+                # print(release_ids)
+                vote_average_id = vote_averages[0][0]
+
+                cur.execute('INSERT INTO movies VALUES(NULL,?,?,?,?,?,?,?)', (movie_name, movie_overview, release_id,
+                                                                              language_id, age_rating_id, vote_count_id,
+                                                                              vote_average_id))
+                conn.commit()
+                i += 1
         except ValueError:
             print(year)
+
+print("Data parsed successfully.")
+file.close()
+print("CSV-File closed successfully.")
+
+#conn.execute('UPDATE movies '
+#             'SET release_id = ( SELECT id FROM release_dates WHERE
+#
+#   SET quantity = quantity - daily.amt
+#  FROM (SELECT sum(quantity) AS amt, itemId FROM sales GROUP BY 2) AS daily
+# WHERE inventory.itemId = daily.itemId;)
