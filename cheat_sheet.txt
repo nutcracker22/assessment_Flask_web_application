@@ -11,4 +11,13 @@ git checkout main
 git merge development
 
 # to run the flask app
+export FLASK_APP=movie_database.py
+export FLASK_ENV=development
 python3 -m flask run
+
+# create an issue on github via terminal
+gh issue create --title "title-string" --body "body-string" --assignee @me
+
+
+GH manual
+https://cli.github.com/manual/gh

@@ -8,11 +8,20 @@
 
 
     <h3>Browse your favorite movies.</h3>
-    <p>Test2 {{ movie[0]["name"] }}</p>
     <p>Movie:
        <b> {{ movie[0]["name"] }}</b> |
         {{ movie[0]["overview"] }} |
-        <a href="{{ youtube}}" target="_blank">Watch trailer on youtube.</a>
+    </p>
+    <p>
+        <a href="{{ youtube}}" target="_blank">Watch trailer on youtube.</a><br><br>
+    </p>
+    <p>
+        <b>Further information about this movie:</b> <br>
+        Release date: {{ dates[0]["release_date"] }} <br>
+        Original language: {{ lang[0]["language"] }} <br>
+        Age rating: {{ age_rating }} <br>
+        Vote counts: {{ votes[0]["vote_count"] }} <br>
+        Average vote: {{ vote_average[0]["vote_average"] }} <br>
     </p>
 </body>
 </html>
