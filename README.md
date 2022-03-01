@@ -18,4 +18,5 @@ First steps:
 - inspected database to look for semantic errors, which might be caused by mistakes in the original dataset
 - wrote workarounds for those
 - another commit to GitHub and did a pull request without deleting the development branch
-- 
+- included another functionality into the database
+- commit and pull request
