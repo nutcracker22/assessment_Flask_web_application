@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>AMDb</title>
+</head>
+<body>
+
+    <h1>Atlassian Movie Database</h1>
+
+
+    <h3>Browse your favorite movies.</h3>
+    {% for row in rows %}
+    <p>Movie:
+       <b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["id"]}}</a></b> |
+       {{row["name"]}} |
+        {{ row["overview"]}} |
+    </p>
+    {% endfor %}
+</body>
+</html>
