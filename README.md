@@ -20,3 +20,7 @@ First steps:
 - another commit to GitHub and did a pull request without deleting the development branch
 - included another functionality into the database
 - commit and pull request
+- created the movie_database.py as the basis for the app
+- created empty templates for the separate pages
+- created tests for the templates and ran them to see them fail
+- filled the templates and worked on them till the tests passed
