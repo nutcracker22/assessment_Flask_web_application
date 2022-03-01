@@ -1,17 +1,18 @@
 <html>
 <head>
-  <title>Acme Shopping: Customers</title>
+  <title>AMDb</title>
 </head>
 <body>
- 
-    <h1>Acme Shopping: Customers</h1>
-    
+
+    <h1>Atlassian Movie Database</h1>
+
+
+    <h3>Browse your favorite movies.</h3>
     {% for row in rows %}
-    <p>Customer: 
-       <b> <a href={{ url_for('customer_details', id= row['id']) }}>{{row["id"]}}</a></b> |  
+    <p>Movie:
+       <b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["id"]}}</a></b> |
        {{row["name"]}} |
-        {{ row["email"]}} |
-       {{row['address']}}	
+        {{ row["overview"]}} |
     </p>
     {% endfor %}
 </body>

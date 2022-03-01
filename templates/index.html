@@ -1,22 +1,23 @@
 <html>
 <head>
-  <title>Acme Shopping</title>
+  <title>AMDb</title>
 </head>
 <body>
  
-    <h1>Acme Shopping</h1>
+    <h1>Atlassian Movie Database</h1>
     
     
-    <h3>You name it, we might sell it</h3>
+    <h3>Browse your favorite movies.</h3>
     <p>Look at the data in the other pages and fix errors as you find them</p>
-    <p><a href={{ url_for('customers') }}>Customers</a> | <a href={{ url_for('orders') }}>Orders</a></p>
-    <p>This is an idea of how you might do the backend of a site. All of the authentication/admin stuff is missing, 
-      as are forms for entering orders and customer details. You just see what the orders are, and who ordered what.
+    <p><a href={{ url_for('movies') }}>Movies</a> | <a href={{ url_for('years') }}>Years</a> |
+        <a href={{ url_for('age_rating') }}>Age Rating</a></p>
+    <p>This is a movie database, which is based on the dataset provided by Hamza Ansari on
+        <a href="https://www.kaggle.com/hamzansariii/latest-popular-movies-dataset" id="kaggle">Kaggle</a>.
     </p>
 
-    <p>Supply a dashboard to show the number of orders, and the amount spent by customers.</p>
-    {% for customer in customers %}
-    <p><b>{{ customer["name"] }}:</b> {{ orders_per_customer[customer["id"]] }} orders</p>
-    {% endfor %}
+    <p>See movies based on their release year:</p>
+
+
+
 </body>
 </html>
