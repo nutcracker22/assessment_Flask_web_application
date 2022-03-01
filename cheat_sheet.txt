@@ -21,3 +21,5 @@ gh issue create --title "title-string" --body "body-string" --assignee @me
 
 GH manual
 https://cli.github.com/manual/gh
+
+python3 -m pip freeze > requirements.txt
