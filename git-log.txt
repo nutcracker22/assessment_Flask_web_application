@@ -1,3 +1,5 @@
+* 9584074 : updated readme.md, included new functionality in database
+* c97f800 : made movie_db.py working
 * df93d26 : edited readme.md, improved movie_db.py
 * 9eb43dd : edited readme.md, improved movie_db.py
 * b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
