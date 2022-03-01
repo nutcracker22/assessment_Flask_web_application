@@ -1,18 +1,18 @@
 <html>
 <head>
-  <title>Acme Shopping: Customers</title>
+  <title>AMDb</title>
 </head>
 <body>
- 
-    <h1>Acme Shopping: Customer Details</h1>
-    
-    <p>Customer: 
-       <b> {{customer[0]["id"]}}</b> |  
-       {{customer[0]["name"]}} |
-        {{ customer[0]["email"]}} |
-       {{customer[0]['address']}}	
+
+    <h1>Atlassian Movie Database</h1>
+
+
+    <h3>Browse your favorite movies.</h3>
+    <p>Test2 {{ movie[0]["name"] }}</p>
+    <p>Movie:
+       <b> {{ movie[0]["name"] }}</b> |
+        {{ movie[0]["overview"] }} |
+        <a href="{{ youtube}}" target="_blank">Watch trailer on youtube.</a>
     </p>
-  <p>Modify the method to also supply the customer's orders</p>
-    <p>Details of orders for {{customer[0]["name"]}}:</p>
 </body>
 </html>

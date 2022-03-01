@@ -9,9 +9,7 @@
 
     <h3>Browse your favorite movies.</h3>
     {% for row in rows %}
-    <p>Movie:
-       <b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["id"]}}</a></b> |
-       {{row["name"]}} |
+    <p><b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["name"]}}</a></b> |
         {{ row["overview"]}} |
     </p>
     {% endfor %}

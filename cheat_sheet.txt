@@ -1,0 +1,14 @@
+
+# switch to branch main and run the following command to retrieve the commits, merges and pull requests from the remote repository:
+git checkout main
+git -c credential.helper= -c core.quotepath=false -c log.showSignature=false fetch origin --recurse-submodules=no --progress --prune
+
+# afterwards run this command to create the git-log.txt
+git log --pretty=format:'%h : %s' --graph > git-log.txt
+
+# create a pull request via the terminal:
+git checkout main
+git merge development
+
+# to run the flask app
+python3 -m flask run

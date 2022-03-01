@@ -29,16 +29,44 @@ def movies():
     return render_template('movies.html', rows=rows)
 
 
-@app.route('/movies_details')
-def movie_details():
+@app.route('/movie_details/<id>')
+def movie_details(id):
     conn = sqlite3.connect(db_name)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     # get results from movies
-    cur.execute("select * from movies")
-    rows = cur.fetchall()
+    cur.execute("SELECT * FROM movies WHERE id=?", (id,))
+    movie = cur.fetchall()
+    print(movie)
+    movie_name = movie[0][1]
+    movie_name_split = movie_name.split(" ")
+    youtube = "https://www.youtube.com/results?search_query="
+    for i in range(0, len(movie_name_split) - 1):
+        youtube += movie_name_split[i] + "+"
+    youtube += "Trailer"
+    print(youtube)
+#    youtube = "https://www.youtube.com/results?search_query=" + movie_name_split[0] + "+" + movie_name_split[1] + "+" + "Trailer"
     conn.close()
-    return render_template('movies.html', rows=rows)
+    return render_template('movie_details.html', movie=movie, youtube=youtube)
+
+
+@app.route('/year/<id>')
+def year(id):
+    conn = sqlite3.connect(db_name)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    # get results from years
+    cur.execute("SELECT * FROM release_years WHERE id=?", (id,))
+    year = cur.fetchall()
+    cur.execute("SELECT * FROM movies WHERE release_year_id=?", (id,))
+    movies = cur.fetchall()
+    release_ids = []
+    for movie in movies:
+        release_ids.append(movies[0]['release_id'])
+    cur.execute("SELECT * FROM release_dates")
+    dates = cur.fetchall()
+    conn.close()
+    return render_template('year.html', movies=movies, year=year, release_ids=release_ids, dates=dates)
 
 
 @app.route('/years')
@@ -47,7 +75,7 @@ def years():
 
 
 @app.route('/age_rating')
-def age_rating():
+def age_rating(id):
     pass
 
 
