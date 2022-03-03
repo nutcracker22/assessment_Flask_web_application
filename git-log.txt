@@ -1,3 +1,4 @@
+* 5a5bf9f : Fixes #4
 * caa8170 : fixed issue #4 and included back button on details pages.
 * 0046e4b : refactored movie_db.py
 * 5074719 : updated readme, movie_details and movie_database
