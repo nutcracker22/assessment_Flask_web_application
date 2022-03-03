@@ -8,6 +8,11 @@
 
 
     <h3>Browse your favorite movies.</h3>
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
     <p>In {{ year[0][1] }} the following movies have been released:</p>
       {% for movie in movies %}
       <p>
@@ -16,8 +21,13 @@
           {{dates[movie["release_id"]]["release_date"]}} |
       </p>
       {% endfor %}
-  </body>
-  </html>
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
+</body>
+</html>
 
 <!--
           {{dates[0]["release_date"]}} |

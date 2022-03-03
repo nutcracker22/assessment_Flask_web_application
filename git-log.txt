@@ -1,7 +1,10 @@
-* b9bc2fa : added runtime.txt
-* 761c5ad : Init deploy
-*   c62812f : Merge branch 'development' final merge of the day?
+*   5a99892 : Merge branch 'development'
 |\  
+| * 0046e4b : refactored movie_db.py
+* | b9bc2fa : added runtime.txt
+* | 761c5ad : Init deploy
+* | c62812f : Merge branch 'development' final merge of the day?
+|\| 
 | * 5074719 : updated readme, movie_details and movie_database
 | * 5887705 : added tests and filled templates #1
 * | e9f7a57 : Merge pull request #3 from nutcracker22/development
