@@ -8,6 +8,11 @@
 
 
     <h3>Browse your favorite movies.</h3>
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
     <p>Movie:
        <b> {{ movie[0]["name"] }}</b> |
         {{ movie[0]["overview"] }} |
@@ -23,5 +28,11 @@
         Vote counts: {{ votes[0]["vote_count"] }} <br>
         Average vote: {{ vote_average[0]["vote_average"] }} <br>
     </p>
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
+
 </body>
 </html>

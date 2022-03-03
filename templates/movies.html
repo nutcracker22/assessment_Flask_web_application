@@ -8,10 +8,22 @@
 
 
     <h3>Browse your favorite movies.</h3>
+
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
     {% for row in rows %}
     <p><b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["name"]}}</a></b> |
         {{ row["overview"]}} |
     </p>
     {% endfor %}
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
+
 </body>
 </html>
