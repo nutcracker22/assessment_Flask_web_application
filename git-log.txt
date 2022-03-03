@@ -1,9 +1,18 @@
-*   1eb7b22 : Merge branch 'development' Fixes #4
+*   69ccfc4 : Merge branch 'main' of github.com:nutcracker22/assessment_Flask_web_application Fixes #6
 |\  
-| * 5a5bf9f : Fixes #4
-| * caa8170 : fixed issue #4 and included back button on details pages.
-* | 5a99892 : Merge branch 'development'
-|\| 
+| *   de6eebf : Merge pull request #9 from nutcracker22/development
+| |\  
+* | | 5bfb41c : Fixes #6
+* | |   1eb7b22 : Merge branch 'development' Fixes #4
+|\ \ \  
+| | |/  
+| |/|   
+| * | 5a5bf9f : Fixes #4
+| * | caa8170 : fixed issue #4 and included back button on details pages.
+* | | 5a99892 : Merge branch 'development'
+|\| | 
+| |/  
+|/|   
 | * 0046e4b : refactored movie_db.py
 * | b9bc2fa : added runtime.txt
 * | 761c5ad : Init deploy
