@@ -1,21 +1,12 @@
-* b9bc2fa : added runtime.txt
-* 761c5ad : Init deploy
-*   c62812f : Merge branch 'development' final merge of the day?
-|\  
-| * 5074719 : updated readme, movie_details and movie_database
-| * 5887705 : added tests and filled templates #1
-* | e9f7a57 : Merge pull request #3 from nutcracker22/development
-|\| 
-| * ed796c9 : added templates and movie-database.py
-| * e04908a : added templates and movie-database.py
-* | 80e9342 : Merge pull request #2 from nutcracker22/development
-|\| 
-| * 9584074 : updated readme.md, included new functionality in database
-| * c97f800 : made movie_db.py working
-* | f81835b : Merge pull request #1 from nutcracker22/development
-|\| 
-| * df93d26 : edited readme.md, improved movie_db.py
-| * 9eb43dd : edited readme.md, improved movie_db.py
-| * b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
-|/  
+* caa8170 : fixed issue #4 and included back button on details pages.
+* 0046e4b : refactored movie_db.py
+* 5074719 : updated readme, movie_details and movie_database
+* 5887705 : added tests and filled templates #1
+* ed796c9 : added templates and movie-database.py
+* e04908a : added templates and movie-database.py
+* 9584074 : updated readme.md, included new functionality in database
+* c97f800 : made movie_db.py working
+* df93d26 : edited readme.md, improved movie_db.py
+* 9eb43dd : edited readme.md, improved movie_db.py
+* b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
 * fb95743 : Initial commit
