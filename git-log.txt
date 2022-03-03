@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *   69ccfc4 : Merge branch 'main' of github.com:nutcracker22/assessment_Flask_web_application Fixes #6
 |\  
 | *   de6eebf : Merge pull request #9 from nutcracker22/development
@@ -34,4 +35,18 @@
 | * 9eb43dd : edited readme.md, improved movie_db.py
 | * b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
 |/  
+=======
+* 5a5bf9f : Fixes #4
+* caa8170 : fixed issue #4 and included back button on details pages.
+* 0046e4b : refactored movie_db.py
+* 5074719 : updated readme, movie_details and movie_database
+* 5887705 : added tests and filled templates #1
+* ed796c9 : added templates and movie-database.py
+* e04908a : added templates and movie-database.py
+* 9584074 : updated readme.md, included new functionality in database
+* c97f800 : made movie_db.py working
+* df93d26 : edited readme.md, improved movie_db.py
+* 9eb43dd : edited readme.md, improved movie_db.py
+* b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
+>>>>>>> development
 * fb95743 : Initial commit

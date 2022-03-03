@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>AMDb</title>
+  <title>AMDb - Movie Overview</title>
 </head>
 <body>
 
@@ -14,15 +14,23 @@
         <input type="button" value="Go back!" onclick="history.back()">
     </form>
     </p>
-    {% for row in rows %}
-    <p><b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["name"]}}</a></b> |
-        {{ row["overview"]}} |
-    </p>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>Name of the Movie</th>
+            <th>Short Summary</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td><b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["name"]}}</a></b></td>
+            <td>{{ row["overview"]}}</td>
+        </tr>
+        <tr></tr>
+        {% endfor %}
+    </table>
     <p>
-    <form>
+      <form>
         <input type="button" value="Go back!" onclick="history.back()">
-    </form>
+      </form>
     </p>
 
 </body>

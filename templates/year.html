@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>AMDb</title>
+  <title>AMDb - Movies by Year</title>
 </head>
 <body>
 
@@ -14,13 +14,20 @@
     </form>
     </p>
     <p>In {{ year[0][1] }} the following movies have been released:</p>
+    <table>
+        <tr>
+            <th>Name of the Movie</th>
+            <th>Release Date</th>
+            <th>Release ID</th>
+        </tr>
       {% for movie in movies %}
-      <p>
-         <b> <a href={{ url_for('movie_details', id= movie['id']) }}>{{movie["name"]}}</a></b> |
-          {{ movie["release_id"] }} |
-          {{dates[movie["release_id"]]["release_date"]}} |
-      </p>
+      <tr>
+         <td><b> <a href={{ url_for('movie_details', id= movie['id']) }}>{{movie["name"]}}</a></b></td>
+         <td>{{ dates[movie["release_id"]-1]["release_date"] }}</td>
+         <td>{{ movie["release_id"] }}</td>
+      </tr>
       {% endfor %}
+    </table>
     <p>
     <form>
         <input type="button" value="Go back!" onclick="history.back()">

@@ -1,18 +1,32 @@
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, g
 
 app = Flask(__name__)
 
-# database details - to remove some duplication
 DB_NAME = 'movies-data.db'
 
 app.config.from_object(__name__)
+
 
 def connect_to_db():
     conn = sqlite3.connect(DB_NAME)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     return cur
+
+
+# this function was obtained from https://github.com/mjhea0/flaskr-tdd
+def get_db():
+    if not hasattr(g, "sqlite_db"):
+        g.sqlite_db = connect_db()
+    return g.sqlite_db
+
+
+# this function was obtained from https://github.com/mjhea0/flaskr-tdd
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, "sqlite_db"):
+        g.sqlite_db.close()
 
 
 @app.route('/')

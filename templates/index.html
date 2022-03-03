@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>AMDb</title>
+  <title>AMDb - Homepage</title>
 </head>
 <body>
  
@@ -16,12 +16,14 @@
 
 
     <p>See movies based on their release year:</p>
-    <p>
-        |
-        {% for year in years %}
-        <a href={{ url_for('year', id= year['id']) }}>{{ year['release_year'] }}</a> |
-        {% endfor %}
-    </p>
+    <table>
+        <tr>
+            {% for year in years %}
+            <td><a href={{ url_for('year', id= year['id']) }}>{{ year['release_year'] }}</a></td>
+            <td> </td>
+            {% endfor %}
+        </tr>
+    </table>
 
 </body>
 </html>
