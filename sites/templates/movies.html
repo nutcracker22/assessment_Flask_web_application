@@ -14,6 +14,18 @@
         <input type="button" value="Go back!" onclick="history.back()">
     </form>
     </p>
+    <br>
+    <form action="/" method="post">
+                <p>Please enter, what you would like to search for:</p>
+    <input type="radio" name="search_for" value="year"> Year </input>
+    <input type="radio" name="search_for" value="movie"> Movie Name </input>
+                <p>Please enter, the year or movie name:</p>
+    <input type="text" name="movie_name">
+    <input type="submit" value="Search">
+    </form>
+    <br>
+    <br>
+
     <table>
         <tr>
             <th>Name of the Movie</th>
@@ -21,8 +33,9 @@
         </tr>
         {% for row in rows %}
         <tr>
-            <td><b> <a href={{ url_for('movie_details', id= row['id']) }}>{{row["name"]}}</a></b></td>
+            <td><b> <a href={{ url_for('movie_details.movie_details', id= row['id']) }}>{{row["name"]}}</a></b></td>
             <td>{{ row["overview"]}}</td>
+            <td> </td>
         </tr>
         <tr></tr>
         {% endfor %}
