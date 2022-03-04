@@ -33,7 +33,7 @@
         </tr>
         {% for row in rows %}
         <tr>
-            <td><b> <a href={{ url_for('movie_details.movie_details', id= row['id']) }}>{{row["name"]}}</a></b></td>
+            <td><b> <a href={{url_for('movie_details.movie_details', id= row['id'])}}>{{row["name"]}}</a></b></td>
             <td>{{ row["overview"]}}</td>
             <td> </td>
         </tr>

@@ -4,8 +4,7 @@ from wsgiref import simple_server
 from wsgiref.simple_server import WSGIRequestHandler
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.support.ui import WebDriverWait
-from movie_database import app
+from sites import app
 import time
 
 options = FirefoxOptions()

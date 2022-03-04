@@ -22,7 +22,7 @@
         </tr>
       {% for movie in movies %}
       <tr>
-         <td><b> <a href={{ url_for('movie_details.movie_details', id= movie['id']) }}>{{movie["name"]}}</a></b></td>
+         <td><b> <a href={{url_for('movie_details.movie_details', id= movie['id'])}}>{{movie["name"]}}</a></b></td>
          <td>{{ dates[movie["release_id"]-1]["release_date"] }}</td>
          <td>{{ movie["release_id"] }}</td>
       </tr>
