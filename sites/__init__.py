@@ -1,8 +1,7 @@
 import os
 from flask import Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 from sites.database import connect_to_db
-
-app = Flask(__name__, instance_relative_config=True)
+#from sites.test import create_app
 
 def create_app(test_config=None): #code mainly from Flask Documentation/Tutorial
     app = Flask(__name__, instance_relative_config=True)
@@ -21,12 +20,8 @@ def create_app(test_config=None): #code mainly from Flask Documentation/Tutorial
     except OSError:
         pass
 
-    @app.route('/')
-    def index():
-        cursor = connect_to_db()
-        cursor.execute("select * from release_years")
-        years = cursor.fetchall()
-        return render_template('index.html', years=years)
+    from . import index
+    app.register_blueprint(index.bp)
 
     from . import database
     database.init_app(app)

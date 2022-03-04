@@ -2,7 +2,7 @@ import sqlite3
 from flask import current_app, g
 
 
-DB_NAME = 'movies-data.db'
+DB_NAME = 'sites/movies-data.db'
 
 def close_db(e=None):
     db = g.pop('db', None)
