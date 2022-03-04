@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, g
+from flask import Flask, render_template, g, request
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def connect_to_db():
 # this function was obtained from https://github.com/mjhea0/flaskr-tdd
 def get_db():
     if not hasattr(g, "sqlite_db"):
-        g.sqlite_db = connect_db()
+        g.sqlite_db = connect_to_db()
     return g.sqlite_db
 
 
@@ -29,9 +29,31 @@ def close_db(error):
         g.sqlite_db.close()
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
     cursor = connect_to_db()
+    ### add later - search function
+    # get user input
+    # if request.method == "POST":
+    #     search = request.form['search_for']
+    #     if search == "movie":
+    #         name = request.form["movie_name"]
+    #         cursor.execute("SELECT * FROM movies WHERE name=?", (name,))
+    #         movies1 = cursor.fetchall()
+    #         movies(movies1)
+    #     else:
+    #         name = int(request.form["movie_name"])
+    #         if name < 2007:
+    #             pass
+    #             # print (not in database) on html
+    #         elif name > 2022:
+    #             pass
+    #             #print (sorry, that is in the future) on html
+    #         else:
+    #             cursor.execute("SELECT * FROM release_years WHERE release_year=?", (name,))
+    #             years1 = cursor.fetchall()
+    #             years1_id = years1[0][0]
+    #             year(years1_id)
     # get results from years
     cursor.execute("select * from release_years")
     years = cursor.fetchall()
@@ -81,6 +103,26 @@ def movie_details(id):
 #    conn.close()
     return render_template('movie_details.html', movie=movie, youtube=youtube, dates=dates, lang=lang,
                            age_rating=age_rating, votes=votes, vote_average=vote_average)
+
+
+@app.route('/statistics')
+def statistics():
+    cursor = connect_to_db()
+    # get results from movies ### movies per year
+    cursor.execute("select * from release_years")
+    years = cursor.fetchall()
+    years_id = []
+    list_amount = []
+    sum = 0
+    for year in years:
+        years_id.append(year[0])
+        cursor.execute("SELECT * FROM movies WHERE release_year_id=?", (year[0],))
+        movies_per_year = cursor.fetchall()
+        amount = len(movies_per_year)
+        list_amount.append(amount)
+        sum += amount
+    average_movies = sum / len(years_id)
+    return render_template('statistics.html', average=average_movies, column1=years_id, column2=list_amount, rows=len(years_id), years=years)
 
 
 @app.route('/year/<id>')

@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>AMDb - Statistics</title>
+</head>
+<body>
+
+    <h1>Atlassian Movie Database</h1>
+
+
+    <h3>See some statistics about the movies in our database.</h3>
+
+    <p>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </p>
+    <p>On average, there have been {{ average }} movies released per year.</p>
+
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>No. of movies released</th>
+        </tr>
+        {% for row in range(0, rows) %}
+        <tr>
+            <td>{{ years[column1[row]-1][1] }}</td>
+            <td align="center">{{ column2[row] }}</td>
+        </tr>
+        <tr></tr>
+        {% endfor %}
+    </table>
+    <p>
+      <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+      </form>
+    </p>
+
+</body>
+</html>
