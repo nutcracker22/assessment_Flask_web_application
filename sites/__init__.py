@@ -2,7 +2,7 @@ import os
 from flask import Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 from sites.database import connect_to_db
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 def create_app(test_config=None): #code mainly from Flask Documentation/Tutorial
     app = Flask(__name__, instance_relative_config=True)
