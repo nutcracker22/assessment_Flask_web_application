@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>AMDb - Homepage</title>
+</head>
+<body>
+ 
+    <h1>Atlassian Movie Database</h1>
+    
+    
+    <h3>Browse your favorite movies.</h3>
+    <p>This is a movie database, which is based on the dataset provided by Hamza Ansari on
+        <a href="https://www.kaggle.com/hamzansariii/latest-popular-movies-dataset" id="kaggle">Kaggle</a>.
+    </p>
+    <p>To see all the movies available in our database, please go to <a href={{ url_for('movies.movies') }} >Movies</a>. <br>
+        Soon you will be able to search for a specific movie and to sort the movies according user rating and
+        popularity.
+    </p>
+    <p>If you are more interested in statistics, please go to our <a href={{ url_for('statistics.statistics') }} >Statistics page</a>. <br>
+    </p>
+
+    <form action="/" method="post">
+                <p>Please enter, what you would like to search for:</p>
+    <input type="radio" name="search_for" value="year"> Year </input>
+    <input type="radio" name="search_for" value="movie"> Movie Name </input>
+                <p>Please enter, the year or movie name:</p>
+    <input type="text" name="movie_name">
+    <input type="submit" value="Search">
+    </form>
+
+
+    <p><br>If you would like to see movies based on their release year, please click the respective year:</p>
+    <table>
+        <tr>
+            {% for year in years %}
+            <td><a href={{ url_for('year.year', id= year['id']) }}>{{ year['release_year'] }}</a></td>
+            <td> </td>
+            {% endfor %}
+        </tr>
+    </table>
+
+</body>
+</html>

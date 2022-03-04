@@ -5,10 +5,11 @@ from wsgiref.simple_server import WSGIRequestHandler
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.support.ui import WebDriverWait
-from shopping import app
+from movie_database import app
 import time
 
 options = FirefoxOptions()
+
 
 def before_all(context):
     context.server = simple_server.WSGIServer(("", 5000), WSGIRequestHandler)
@@ -25,4 +26,4 @@ def after_all(context):
     context.browser.quit()
     context.server.shutdown()
     context.pa_app.join()
-    
+
