@@ -1,28 +1,71 @@
-*   1eb7b22 : Merge branch 'development' Fixes #4
-|\
-| * 5a5bf9f : Fixes #4
-| * caa8170 : fixed issue #4 and included back button on details pages.
-* | 5a99892 : Merge branch 'development'
-|\|
+* f33d6be : final heroku refactor
+* a357794 : refactor
+* 5de8bef : refactor
+* 7fbb09a : refactor
+* ea59911 : refactor
+* a579c55 : refactor
+* 2631b52 : refactor
+* 6c73d95 : refactor
+* bb15af5 : refactor
+* 0683eec : new try with Procfile
+* c054ee6 : Procfile updated for Heroku push
+* 69a9eee : updated requirements.txt
+* 4fc1a33 : small refactoring
+* 4bfe395 : small refactoring
+*   92b0a34 : Merge branch 'main' of github.com:nutcracker22/assessment_Flask_web_application bringing it up to date
+|\  
+| *   bf685fb : Merge pull request #11 from nutcracker22/development
+| |\  
+* | | 456b440 : added MANIFEST.in and setup.py
+| |/  
+|/|   
+* | 8b7f4cc : added .gitignore
+* | 9c7123f : huge refactoring to separate code into files
+* | d9353db : added statistics
+* | 8348ecb : added working behave tests
+|/  
+*   06edaa8 : minor change before switching branches
+|\  
+| * ba7463e : minor change before switching branches
+* | 1fea12d : minor change before switching branches
+|\| 
+| * 5df99bb : Fixes #4, now it really does. Also inserted html tables on different pages.
+| * 7e7c4b1 : minor change before switching branches
+* | 45fb498 : minor change before switching branches
+* |   69ccfc4 : Merge branch 'main' of github.com:nutcracker22/assessment_Flask_web_application Fixes #6
+|\ \  
+| * | de6eebf : Merge pull request #9 from nutcracker22/development
+| |\| 
+* | | 5bfb41c : Fixes #6
+* | |   1eb7b22 : Merge branch 'development' Fixes #4
+|\ \ \  
+| | |/  
+| |/|   
+| * | 5a5bf9f : Fixes #4
+| * | caa8170 : fixed issue #4 and included back button on details pages.
+* | | 5a99892 : Merge branch 'development'
+|\| | 
+| |/  
+|/|   
 | * 0046e4b : refactored movie_db.py
 * | b9bc2fa : added runtime.txt
 * | 761c5ad : Init deploy
 * | c62812f : Merge branch 'development' final merge of the day?
-|\|
+|\| 
 | * 5074719 : updated readme, movie_details and movie_database
 | * 5887705 : added tests and filled templates #1
 * | e9f7a57 : Merge pull request #3 from nutcracker22/development
-|\|
+|\| 
 | * ed796c9 : added templates and movie-database.py
 | * e04908a : added templates and movie-database.py
 * | 80e9342 : Merge pull request #2 from nutcracker22/development
-|\|
+|\| 
 | * 9584074 : updated readme.md, included new functionality in database
 | * c97f800 : made movie_db.py working
 * | f81835b : Merge pull request #1 from nutcracker22/development
-|\|
+|\| 
 | * df93d26 : edited readme.md, improved movie_db.py
 | * 9eb43dd : edited readme.md, improved movie_db.py
 | * b5a46b9 : edited readme.md, added movie-db.py and movies_data.db
-|/
+|/  
 * fb95743 : Initial commit
