@@ -4,6 +4,7 @@
 
 As the final assessment for the course Advanced Programming, I needed to create a database driven web application within 5 days, using Flask. This repository contains my solution. Furthermore, I had to submit a development report, which is shown below.
 
+Even though this had been a very challenging assessment, since it contained so many new concepts, like behaviour driven development, git, and so on, I really enjoyed this challenge. And in the end I was even rewarded by receiving an excellent grade for it.
 ## Development report
 
 My aim had been to develop and app about environmental data, preferably in the Aberdeen area. But I could not find any suitable datasource. The data I found had either too few items or came in a non-suitable data format. Thus, I had to switch to a more standard data set – a movie database. The original dataset can be found at: https://www.kaggle.com/hamzansariii/latest-popular-movies-dataset.
@@ -26,4 +27,4 @@ https://github.com/benoitc/gunicorn/issues/2159
 The work around provided (calling the create_app() function, assigning it to a variable and using this variable in the Procfile, instead of ‘app’), solved the issue. This whole process of debugging this issue took me about 5 hours.
 Because of this delay, I could not implement some functionalities, as I had intended.
 
-As shown in the git-log.txt file, I used git from the beginning on, almost exclusively working on the development branch of the repository, with usually two merges per day, usually after significant steps had been done or errors had been fixed. In order to remember functionalities I wanted to implement after finished the tasks I was working on, I started creating issues on GitHub and via git. In this way I found out that this is very easy to use and very helpful, since the issues can be closed by a message attached to a commit or merge command, even via the terminal of the IDE.
+As shown in the git-log.txt file, I used git from the beginning on, almost exclusively working on the development branch of the repository, with usually two merges per day, mostly after significant steps had been done or errors had been fixed. In order to remember functionalities I wanted to implement later, I started creating issues on GitHub and via git. In this way I found out that this is very easy to use and very helpful, since the issues can be closed by a message attached to a commit or merge command, even via the terminal of the IDE.
